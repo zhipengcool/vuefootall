@@ -1,0 +1,52 @@
+<div class="wrap-flex" id="wrapFlex">	
+	<header class="header">
+		<ul>
+			<li><i class="yo-ico menu">&#xe745;</i></li>
+			<li>
+				<p id="titles">
+					<span class="active">热点</span>
+					<span>关注</span>
+				</p>
+			</li>
+			<li><i class="yo-ico sm">&#xe684;</i></li>
+		</ul>
+	</header>
+	<section class="section">
+		<div class="swiper-container guide-img">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide hotTitle">
+					<ul  id="title">
+						<li v-for="(items,index) in navTitle" :class="index == navActive? 'active' : ' ' " @click = "changePage(index)">{{index}}=={{items}}</li>
+					</ul>
+					<div class="cont" id="cont">	
+					     <div>
+						<div class="swiper-container home-content" id="home-content">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="main">
+										<div class="main-one" v-for="render in renderData">
+											<img :src="render.img">
+											<b>{{render.title}}</b>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									足球生活
+								</div>
+								<div class="swiper-slide">
+									足球美女
+								</div>
+							</div>
+						</div>
+					     </div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					关注中……
+				</div>
+			</div>
+		</div>
+
+		
+	</section>
+</div>

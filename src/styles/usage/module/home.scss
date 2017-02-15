@@ -1,0 +1,170 @@
+.wrap{
+	width:100%;
+	height: 100%;				
+	@include flexbox;
+	@include flex-direction(column);
+}
+.wrap-flex{
+	@include flexbox();
+	@include flex();
+	@include flex-direction(column);
+	width: 100%;
+	height: 100%;
+	
+}
+.box{
+		@include flex();
+		width: 100%;
+		@include flexbox();
+		@include flex-direction(column);
+	}
+.header{
+	height: 44px;
+	line-height: 44px;
+	background-color: #0cc140;
+	ul{
+		@include flexbox();
+		text-align: center;
+	           
+	}
+	ul li{
+		&:not(:nth-child(2)){
+			width:44px;
+			font-size: 0.2rem;
+			color: #9effb0;
+		}
+		&:nth-child(2){
+			@include flex();
+			@include flexbox();
+			@include justify-content(center);
+			@include align-items(center);
+			p{
+			   width:1.18rem;
+			   height:0.25rem;
+			   background:#abcdef;
+			   @include flexbox();
+			   font-size:.12rem;
+			   color:rgba(255,255,255,0.7);
+			   background:rgba(100,217,133,0.7);
+			   @include border-radius(.5rem);
+			   overflow:hidden;
+			   span{
+			      width:0.59rem;
+			      height:.25rem;
+			      text-align:center;
+			      line-height:.25rem;
+			      &.active{
+			          color:rgba(255,255,255,1);
+			          background:rgba(100,217,133,1);
+			      }
+			   }
+			}
+		}
+
+	}
+}
+.section{
+	@include flexbox();
+	height: 100%;
+	width: 100%;
+	@include flex-direction(column);
+	ul{
+		@include flexbox();
+		height: 44px;
+		width:100%;
+		line-height: 44px;
+		text-align: center;
+		border-bottom: 1px solid #ccc;
+		li{
+			@include flex();
+			&.active{
+				color:#43a35c; 
+				border-bottom:1px solid #43a35c;
+			}
+		}
+	}
+	.cont{
+		@include flex(); 
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	.home-content{
+		width:100%;
+		height: 100%;
+		overflow-y:auto; 
+		.main{
+			margin-top: 5px;
+			height: 100%;
+		}
+		.main-one{
+			display: inline-block;
+			width: 50%;
+			img{
+				width:182.5px;
+				height:182.5px;
+				display:block;
+			}
+			/*&:nth-child(even){
+				margin-left: 9px;
+			};*/
+		}
+	}
+	.hotTitle{
+		@include flexbox();
+		@include flex-direction(column);
+	}
+
+}
+.app{
+	height: 44px;
+	width:100%;
+	text-align: center;
+	@include border(1px 0 0 0,#ccc,solid)
+}
+.footer{
+	height: 44px;
+	width:100%;
+	text-align: center;
+	@include border(1px 0 0 0,#ccc,solid)
+	
+	ul{
+		@include flexbox;
+	}
+	ul li{
+		@include flex;
+		color: #ccc;
+		/*position: relative;*/
+		i{
+			display: block;
+			font-size: 18px;
+		}
+		b{
+			display: block;
+			margin-top: -4px;
+			font-size: 14px;
+			
+		}
+		&.act{
+			color: green;
+		}
+		  &:nth-child(3){
+   	   	   	i{
+		                      position:absolute!important;
+		                      background:#fff;
+		                      left:50%;
+		                      top:-0.06rem;
+		                      width:0.5rem;
+		                      height:0.5rem;
+		                      @include border(1px,#333,solid,50%);
+		                      @include transform(translate(-50%,0));
+		                      z-index:1001;
+		                      font-size:.38rem;
+		                      line-height:0.5rem;
+   	   	   	  }
+   	   	  }
+		
+	}
+	
+
+}
